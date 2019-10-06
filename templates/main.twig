@@ -1,0 +1,23 @@
+{# base template for the site, includes content templates depending on 'view' variable #}
+<!doctype html>
+<html lang="en">
+    {% include 'partials/head.twig' %}
+    <body>
+    {% include 'partials/navigation.twig' %}
+        <main class="container-fluid mt-4">
+        {% if view == 'home' %}
+            {% include 'partials/shop.twig' %}
+        {% elseif view == 'detail' %}
+            {% include 'partials/detail.twig' %}
+        {% elseif view == 'search' %}
+            {% include 'partials/search.twig' %}
+        {% elseif view == 'register' %}
+            {% include 'partials/register.twig' %}
+        {% elseif view == 'login' %}
+            {% include 'partials/login.twig' %}
+        {% elseif view == 'logout' %}
+            {% include 'partials/logout.twig' %}
+        {% endif %}
+        </main>
+    </body>
+</html>
